@@ -1,0 +1,169 @@
+/* Google Font */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background: linear-gradient(-45deg,#1e3c72,#2a5298,#00c6ff,#0072ff);
+    background-size:400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color:white;
+}
+
+/* Animated Gradient */
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.3);
+    z-index:1000;
+}
+
+header a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+/* Underline Animation */
+header a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:#00f2fe;
+    left:0;
+    bottom:-6px;
+    transition:0.4s;
+}
+
+header a:hover::after{
+    width:100%;
+}
+
+header a:hover{
+    color:#00f2fe;
+}
+
+/* HERO SECTION */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+/* Name Animation */
+.hero h1{
+    font-size:3.5rem;
+    font-weight:700;
+    animation: fadeDown 1.2s ease forwards;
+}
+
+.hero p{
+    font-size:1.4rem;
+    margin:20px 0;
+    font-weight:300;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+/* Button */
+.btn{
+    padding:14px 35px;
+    border-radius:30px;
+    border:none;
+    background:white;
+    color:#0072ff;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+    animation: fadeUp 2s ease forwards;
+}
+
+.btn:hover{
+    background:transparent;
+    color:white;
+    border:2px solid white;
+    box-shadow:0 0 20px rgba(255,255,255,0.6);
+    transform:scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Section Styling */
+section{
+    padding:100px 10%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    margin:50px 0;
+    border-radius:20px;
+}
+
+/* Headings */
+section h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+/* Cards (For Skills/Projects) */
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:15px;
+    transition:0.4s;
+    backdrop-filter:blur(8px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    header{
+        gap:20px;
+        padding:15px 5%;
+    }
+}
